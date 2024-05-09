@@ -1,5 +1,6 @@
 package com.codeElevate.ServiceBookingSystem.entity;
 
+import com.codeElevate.ServiceBookingSystem.enums.userRole;
 import jakarta.persistence.*;
 import lombok.Data;
 
@@ -30,6 +31,6 @@ public class User {
 
     private String phone;
 
-    private UserRole role;
+    private userRole role;
 
 }
