@@ -1,14 +1,15 @@
 package com.codeElevate.ServiceBookingSystem.entity;
 
+import com.codeElevate.ServiceBookingSystem.dto.UserDTO;
 import com.codeElevate.ServiceBookingSystem.enums.userRole;
 import jakarta.persistence.*;
 import lombok.Data;
 
-//Entity annotation -> Signals the JPA provider to tell them that the class should be treated as a table in a database
+//@Entity annotation -> Signals the JPA provider to tell them that the class should be treated as a table in a database
 @Entity
 @Table(name = "users")
 
-//Data annotation -> Shortcut to get  the Getter and Setter
+//@Data annotation -> Shortcut to get the Getter and Setter
 @Data
 
 public class User {
@@ -32,5 +33,16 @@ public class User {
     private String phone;
 
     private userRole role;
+
+    public UserDTO getDto(){
+        UserDTO getDto = new UserDTO();
+
+        UserDTO.setId(id);
+        UserDTO.setName(name);
+        UserDTO.setEmail(email);
+        UserDTO.setRole(role);
+
+        return UserDTO;
+    }
 
 }
